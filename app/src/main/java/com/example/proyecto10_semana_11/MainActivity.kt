@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,10 +23,22 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(this, SmsActivity::class.java)
                 startActivity(intent)
             }
-            R.id.itemMenuMainAge -> {}
-            R.id.itemMenuMainPhone -> {}
-            R.id.itemMenuMainCamera -> {}
-            R.id.itemMenuMainRegister -> {}
+            else ->
+        } R.id.itemMenuMainCamera -> {
+            val intent = Intent("android.media.action.IMAGE_CAPTURE")
+
+            try {
+                startActivity(intent)
+            } catch (ex: Exception) {
+                ex.printStackTrace()
+                Toast.makeText(this, "Error: ${ex.toString()}", Toast.LENGTH_SHORT).show()
+            }
+        }
+        R.id.itemMenuMainRegister -> {
+            val intent = Intent(this, ContactActivity1::class.java)
+            startActivity(intent)
+        }
+    }
         }
 
         return super.onOptionsItemSelected(item)
