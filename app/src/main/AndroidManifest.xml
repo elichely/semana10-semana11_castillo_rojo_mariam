@@ -9,7 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Proyecto10_Semana_11">
-        <activity android:name=".SmsActivity" android:parentActivityName=".MainActivity"></activity>
+        <activity android:name=".ContactActivity2"></activity>
+        <activity android:name=".ContactActivity1" />
+        <activity
+            android:name=".PhoneActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".AgeActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".SmsActivity"
+            android:parentActivityName=".MainActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
